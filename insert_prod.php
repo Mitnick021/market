@@ -1,16 +1,18 @@
 <?php
-    include("database.php");
+include("database.php");
+$nombre = $_POST["nomprod"];
+$codigo = $_POST["codprod"];
+$cantidad = $_POST["cantprod"];
+$estado = $_POST["estprod"];
 
-    $nombre=$_POST["nomprod"];
-    $codigo=$_POST["codprod"];
-    $cantidad=$_POST["cantprod"];
-    $estado=$_POST["estprod"];
+$sql = "INSERT INTO productos (nombre_prod,codigo_prod,cantidad,estado) Values ('$nombre','$codigo','$cantidad','$estado')";
 
-    $sql="INSERT INTO productos(nombre_prod,codigo_prod,cantidad,estado) VALUES ('$nombre','$codigo','$cantidad','$estado')";
-
-    if($conn->query($sql)===TRUE){
-        echo "producto registrado con exito";
-    }else {
-        die("error: " . $conn->error);
-    }
-?>
+if($conn->query($sql) === TRUE){
+  echo "Producto registrado con exito<br>";
+  echo "<a href='index.php'>Regresar</a>";
+echo"<script language='javascript'>alert(':::producto registrado con exito:::')</script>";
+header("Refresh:0;url=index.php");
+}else{
+  die("Error: " . $conn->error);
+}
+ ?>
