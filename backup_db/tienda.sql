@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-05-2019 a las 04:56:43
--- Versión del servidor: 10.1.29-MariaDB
--- Versión de PHP: 7.2.0
+-- Tiempo de generación: 27-05-2019 a las 05:48:56
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,21 +42,7 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`item`, `codprod`, `nomprod`, `cantprod`, `pcosto`, `imagen`) VALUES
-(8, '10230015', 'VARILLA CORRUGADA 11 MM X 6 M DIACO', 50, 12920, ''),
-(9, '10230016', 'CHIPA 1/4 DIACO', 200, 2750, ''),
-(10, '10230017', 'TEJA PVC ADRI N 8 MARFIL 2.44 M', 20, 27727, ''),
-(11, '10230018', 'TEJA PVC ADRI N 10 MARFIL 3.05 M', 20, 34748, ''),
-(12, '10230019', 'TEJA PVC ADRI N 12 MARFIL 3.65 M', 20, 41650, ''),
-(13, '10230020', 'TEJA AJONIT AJOVER N 10 CRISTAL 3.05 M', 20, 49266, ''),
-(14, '10230021', 'TEJA AJONIT AJOVER N 8 CRISTAL 2.44 M', 20, 39508, ''),
-(15, '10230022', 'CEMENTO GRIS X 50 KG TEQUENDAMA', 100, 22200, ''),
-(16, '10230023', 'CHIPA 3/8 DIACO', 200, 2750, ''),
-(19, '10230026', 'TEJA TECHOLIT N 8 ETERNIT 2.44 M', 20, 17850, ''),
-(21, '10230028', 'TEJA RURALITA TRAPEZOIDAL ROJA N 10', 9, 39700, ''),
-(22, '10230029', 'TEJA MARCOLITA TIPO ZINC N 12 GERFOR 3.66 M', 12, 38630, ''),
-(23, '10230030', 'TEJA MARCOLITA TIPO ZINC N 10 GERFOR 3.06 M', 10, 33902, ''),
-(24, '10230031', 'TEJA MARCOLITA TIPO ZINC N 8 GERFOR 2.44 M', 9, 25827, ''),
-(25, '10230032', 'ALAMBRE CENTELSA N 14 X 100 M', 6, 73000, '');
+(2, '2658', 'AGUA MINERAL', 32, 1200, 'products/2658.jpg');
 
 -- --------------------------------------------------------
 
@@ -68,6 +54,7 @@ CREATE TABLE `usuarios` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `firstname` varchar(30) COLLATE utf8_bin NOT NULL,
   `lastname` varchar(30) COLLATE utf8_bin NOT NULL,
+  `identi` int(10) NOT NULL,
   `sexo` varchar(1) COLLATE utf8_bin NOT NULL,
   `email` varchar(50) COLLATE utf8_bin NOT NULL,
   `password` varchar(50) COLLATE utf8_bin NOT NULL,
@@ -78,12 +65,8 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `firstname`, `lastname`, `sexo`, `email`, `password`, `photo`) VALUES
-(1, 'Peter', 'Alonso', '', 'peter@gmail.com', '$2y$10$8UCrEXNSBY3jFVHq720KI.RGnpbmYkG/0OyYipEjkK2', NULL),
-(2, 'Julio', 'Zabala', '', 'peter1@gmail.com', '$2y$10$MmCH/d2H9FwDmmekGOLtceeWRQ0l58wyFFVSCO9u2Xh', NULL),
-(3, 'Maria', 'Zambrano', '', 'maria@hotmail.com', '$2y$10$apZWPOezhSVvkrUDtkrgs.yXSgCMMnHcpmQbh9bELnS', 'images/avatar_default.png'),
-(4, 'Peter', 'Alonso', 'M', 'peter2@gmail.com', '$2y$10$9u5/tv2hdtkAjZRzgHr1W.rLtgxlWtoWxxZwTbDp.lK', 'images/boy.png'),
-(5, 'Karen', 'Zambrano', 'F', 'peter3@gmail.com', '$2y$10$vF9XD7gUgexQ2KiRHS.UaudX4S7wHFGvrP0KsDbDe0C', 'images/girl.png');
+INSERT INTO `usuarios` (`id`, `firstname`, `lastname`, `identi`, `sexo`, `email`, `password`, `photo`) VALUES
+(1, 'santiago', 'narvaez', 1233193777, 'M', 'santiago.28.n@gmail.com', '$2y$10$vkbqa4ArXcB7WNlCEsxF1OZe9PMhZ4PUmhqVW.206kp', 'images/1233193777/1233193777.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -111,13 +94,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `item` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `item` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
